@@ -20,6 +20,10 @@ the plugin UI, thanks to hotreload
 pnpm run dev:ui //dev ui
 pnpm run dev:hook // dev masterGo code
 ```
+
+## change manifest.json
+get your own plugin Id, change it in manifest.json
+
 ## build
 
 Run the following command to compile your plugin to show in masterGo
@@ -34,10 +38,8 @@ pnpm run build
 
 ### Documentation
 
-More about masterGo plugins: [here](https://www.masterGo.com/plugin-docs/)
+More about masterGo plugins: [here](https://developers.mastergo.com/guide/setup.html)
 ## Librairy
 
-- [masterGo UI Styles](https://github.com/thomas-lowry/masterGo-plugin-ds)
-- [masterGo utilities](https://figx.cool)
 - [Naive UI](https://www.naiveui.com)
 - [VueUse](https://vueuse.org/)
