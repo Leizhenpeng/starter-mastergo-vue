@@ -1,0 +1,7 @@
+{
+  "name": "MasterGo Plugin Starter",
+  "id": "72350946291299",
+  "api": "1.0.0",
+  "main": ".appscript/code.js",
+  "ui": ".appscript/index.html"
+}
