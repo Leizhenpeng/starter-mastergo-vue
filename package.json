@@ -4,7 +4,7 @@
     "author": "river <laolei@forkway.cn>",
     "license": "MIT",
     "description": "A Starter Template For masterGo Plugin Power By Vue",
-    "repository": "https://github.com/leizhenpeng/starter-masterGo-vue",
+    "repository": "https://github.com/leizhenpeng/starter-mastergo-vue",
     "type": "module",
     "engines": {
         "node": "^14.18.0 || >=16.0.0"
