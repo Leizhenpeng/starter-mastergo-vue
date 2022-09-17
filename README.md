@@ -3,7 +3,12 @@
 A starter template using vue3 and vite for developing masterGo plugins
 
 
-![ScreenShoot](./docs/shotScreen.png)
+![ScreenShoot-dark](./docs/shotScreen.png)
+
+
+![ScreenShoot-light](./docs/shotScreen_light.png)
+
+
 
 
 ## Get started 

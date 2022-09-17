@@ -45,6 +45,18 @@ const themeOverrides = computed(() => {
     }
     return custom
 })
+window.addEventListener('message', (event: any) => {
+    const { data } = event
+    if (data.name === 'setTheme') {
+        const { ifDark } = data
+        isDark.value = ifDark
+    }
+
+})
+onMounted(() => {
+    parent.postMessage({ type: 'init' }, '*')
+
+})
 </script>
 
 <template>

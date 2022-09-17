@@ -6,6 +6,14 @@ mg.showUI(__html__, {
 });
 console.log('221',221)
 mg.ui.onmessage = prop => {
+  if (prop.type === 'init') {
+    const mg_ = mg as any;
+    const ifDark = mg_.themeColor === 'dark' ? 1 : 0;
+    mg.ui.postMessage({
+      name: 'setTheme',
+      ifDark: ifDark,
+    })
+  }
   if (prop.type === 'apply-code') {
     console.log('✅','code was applied');
     if (prop.triggerOne) {
