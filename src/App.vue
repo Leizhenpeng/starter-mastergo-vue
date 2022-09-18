@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { darkTheme, GlobalThemeOverrides } from 'naive-ui';
-import logo from './assets/logo.png';
+import logo from './assets/logo-acro.png';
 
 
 const triggerOne = ref('This works!')
@@ -59,6 +59,14 @@ window.addEventListener('message', (event: any) => {
     }
 
 })
+watch(isDark,() => {
+    if (isDark.value) {
+        document.body.setAttribute('arco-theme', 'dark')
+    }
+    else {
+        document.body.removeAttribute('arco-theme');
+    }
+})
 onMounted(() => {
     parent.postMessage({ type: 'init' }, '*')
 
@@ -72,9 +80,7 @@ onKeyStroke('Escape', (e) => {
 <template>
     <div>
         <div flex="~ center col">
-
-            <img :src="logo" mt-12 w-140px h-140px />
-
+            <img :src="logo" mt-12 w-120px h-120px />
             <div flex="~ row gap-4" mt-12>
                 <a-button btn type="primary" @click="consoleTry">Show Console</a-button>
                 <a-button @click="create" type="secondary" btn>Manipulate UI</a-button>

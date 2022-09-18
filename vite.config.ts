@@ -71,7 +71,7 @@ export default defineConfig({
         preprocessorOptions: {
             less: {
                 modifyVars: {
-                    'arcoblue-6': '#7ec242',
+                    // 'arcoblue-6': '#7ec242',
                 },
                 javascriptEnabled: true
             }

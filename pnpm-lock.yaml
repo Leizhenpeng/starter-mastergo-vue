@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.25.2
   '@arco-design/web-vue': ^2.37.1
   '@arco-plugins/vite-vue': ^1.3.5
+  '@arco-themes/vue-taolu-publishing-platform': ^0.0.1
   '@iconify-json/ph': ^1.1.0
   '@mastergo/plugin-typings': ^1.0.0
   '@mastergo/plugin-utils': ^0.1.0
@@ -27,6 +28,7 @@ specifiers:
 
 dependencies:
   '@arco-design/web-vue': 2.37.1_vue@3.2.39
+  '@arco-themes/vue-taolu-publishing-platform': 0.0.1_4n4fiovhmlrcstb2tuzjed6xaq
   '@mastergo/plugin-utils': 0.1.11
   '@vueuse/core': 9.2.0_vue@3.2.39
   figx: 0.1.0
@@ -208,6 +210,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@arco-themes/vue-taolu-publishing-platform/0.0.1_4n4fiovhmlrcstb2tuzjed6xaq:
+    resolution: {integrity: sha512-5M0wsTmjXI1Idrp8X46UUelnX0tiD7rVJlc4xrQ3tIph+rZSfraooCf1KcivtSbl08Zf6ZFsAK73x+1LW7w1jw==}
+    peerDependencies:
+      '@arco-design/web-vue': ^2.23.0
+    dependencies:
+      '@arco-design/web-vue': 2.37.1_vue@3.2.39
+    dev: false
 
   /@babel/code-frame/7.18.6:
     resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}
