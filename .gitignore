@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 *.timestamp-*.js
-.appscript/*
+.appscript/code.js
+.appscript/index.html
 

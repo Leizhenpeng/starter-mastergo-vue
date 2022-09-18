@@ -13,6 +13,9 @@ mg.ui.onmessage = prop => {
       ifDark: ifDark,
     })
   }
+  if (prop.type === 'test') {
+    mg.notify('test code execute successful!');
+  }
   if (prop.type === 'apply-code') {
     console.log('✅','code was applied');
     if (prop.triggerOne) {

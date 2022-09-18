@@ -9,6 +9,11 @@ const consoleTry = () => {
         , '*')
 }
 
+const Test = () => {
+    parent.postMessage({ type: 'test' }
+        , '*')
+}
+
 const cancel = () => {
     parent.postMessage( { type: 'cancel' } , '*')
 }
@@ -73,6 +78,7 @@ onKeyStroke('Escape', (e) => {
                 <div flex="~ row gap-4" mt-12>
                     <button btn @click="consoleTry">Show Console</button>
                     <button @click="create" btn>Manipulate UI</button>
+                    <button btn @click="Test">Test Btn</button>
                 </div>
 
                 <div mxa mt-10 flex="col ~ gap-4 center">
