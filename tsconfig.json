@@ -14,12 +14,12 @@
         "lib": ["esnext", "dom"],
         "skipLibCheck": true,
         "allowJs": true,
-        "types": ["vite/client", "vitest/importMeta"],
+        "types": ["vite/client", "vitest/importMeta", "@mastergo/plugin-typings"],
         "baseUrl": ".",
         "paths": {
             "~/*": ["src/*"]
-        },
+        }
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","*.d.ts"],
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","*.d.ts","masterGo/**/*.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

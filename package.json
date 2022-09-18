@@ -34,6 +34,7 @@
         "vue": "^3.2.39"
     },
     "devDependencies": {
+        "@mastergo/plugin-typings": "^1.0.0",
         "@antfu/eslint-config": "^0.25.2",
         "@iconify-json/ph": "^1.1.0",
         "@unocss/preset-mini": "^0.45.21",
