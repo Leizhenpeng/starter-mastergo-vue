@@ -3,10 +3,10 @@
 A starter template using vue3 and vite for developing masterGo plugins
 
 
-![ScreenShoot-dark](./docs/shotScreen.png)
+![ScreenShoot-dark](./docs/shotScreen-acro.png)
 
 
-![ScreenShoot-light](./docs/shotScreen_light.png)
+![ScreenShoot-light](./docs/shotScreen_acro_light.png)
 
 ## Choose Love UI Librairy By Branch
 
