@@ -8,7 +8,10 @@ A starter template using vue3 and vite for developing masterGo plugins
 
 ![ScreenShoot-light](./docs/shotScreen_light.png)
 
+## Choose Love UI Librairy By Branch
 
+- [Naive Ui](https://github.com/Leizhenpeng/starter-mastergo-vue/tree/naive-ui)
+- [Acro Design](https://github.com/Leizhenpeng/starter-mastergo-vue/tree/arcro-ui)
 
 
 ## Get started 
@@ -48,3 +51,4 @@ More about masterGo plugins: [here](https://developers.mastergo.com/guide/setup.
 
 - [Naive UI](https://www.naiveui.com)
 - [VueUse](https://vueuse.org/)
+
