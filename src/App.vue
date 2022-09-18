@@ -57,6 +57,10 @@ onMounted(() => {
     parent.postMessage({ type: 'init' }, '*')
 
 })
+onKeyStroke('Escape', (e) => {
+    e.preventDefault()
+    cancel()
+})
 </script>
 
 <template>

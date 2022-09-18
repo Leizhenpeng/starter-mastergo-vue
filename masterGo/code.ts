@@ -4,7 +4,6 @@ mg.showUI(__html__, {
   width: 450,
   height: 600,
 });
-console.log('221',221)
 mg.ui.onmessage = prop => {
   if (prop.type === 'init') {
     const mg_ = mg as any;
@@ -48,3 +47,4 @@ mg.ui.onmessage = prop => {
   }
 };
 
+export {}
