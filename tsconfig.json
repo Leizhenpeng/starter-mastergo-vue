@@ -14,7 +14,7 @@
         "lib": ["esnext", "dom"],
         "skipLibCheck": true,
         "allowJs": true,
-        "types": ["vite/client", "vitest/importMeta", "@mastergo/plugin-typings"],
+        "types": ["vite/client", "vitest/importMeta", "@mastergo/plugin-typings/dist/index"],
         "baseUrl": ".",
         "paths": {
             "~/*": ["src/*"]
