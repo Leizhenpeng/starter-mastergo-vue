@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import type { GlobalThemeOverrides } from 'naive-ui'
 import { darkTheme } from 'naive-ui'
+<<<<<<< HEAD
 import logo from './assets/logo-acro.png'
+=======
+import logo from './assets/logo.png'
+>>>>>>> master
 
 const triggerOne = ref('This works!')
 const consoleTry = () => {
@@ -57,6 +61,7 @@ window.addEventListener('message', (event: any) => {
     const { ifDark } = data
     isDark.value = ifDark
   }
+<<<<<<< HEAD
 })
 watch(isDark, () => {
   if (isDark.value)
@@ -64,6 +69,8 @@ watch(isDark, () => {
 
   else
     document.body.removeAttribute('arco-theme')
+=======
+>>>>>>> master
 })
 onMounted(() => {
   parent.postMessage({ type: 'init' }, '*')
@@ -76,6 +83,7 @@ onKeyStroke('Escape', (e) => {
 
 <template>
   <div>
+<<<<<<< HEAD
     <div flex="~ center col">
       <img :src="logo" mt-12 w-120px h-120px>
       <div flex="~ row gap-4" mt-12>
@@ -102,6 +110,38 @@ onKeyStroke('Escape', (e) => {
         </div>
       </button>
     </div>
+=======
+    <n-config-provider :theme-overrides="themeOverrides" :theme="ifUseDarkTheme">
+      <div flex="~ center col">
+        <img :src="logo" mt-12 w-140px h-140px>
+
+        <div flex="~ row gap-4" mt-12>
+          <button btn @click="consoleTry">
+            Show Console
+          </button>
+          <button btn @click="create">
+            Manipulate UI
+          </button>
+          <button btn @click="Test">
+            Test Btn
+          </button>
+        </div>
+
+        <div mxa mt-10 flex="col ~ gap-4 center">
+          <n-gradient-text type="success" :size="24">
+            Vue 3 + Vite + Naive UI + Uno + VueUse
+          </n-gradient-text>
+          <n-rate />
+        </div>
+        <button flex="~ center gap-2" mt-12 @click="cancel">
+          <div i-ph-hands-clapping icon-btn />
+          <div icon-btn>
+            See U Again
+          </div>
+        </button>
+      </div>
+    </n-config-provider>
+>>>>>>> master
   </div>
 </template>
 
