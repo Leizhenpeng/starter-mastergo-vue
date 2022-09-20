@@ -8,7 +8,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { viteSingleFile } from './utils/vite_build_single_file'
-
+import { obfuscator } from 'rollup-obfuscator';
 const config = {
   ui: {
     input: {
@@ -65,12 +65,19 @@ export default defineConfig({
           dts: true,
         }),
         viteSingleFile(),
+        obfuscator(),
       ],
   build: {
     assetsInlineLimit: 1000000000000000,
     rollupOptions: {
       ...currentConfig,
       emptyOutDir: false,
+    },
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
     },
   },
   server: {
