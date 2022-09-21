@@ -20,6 +20,6 @@
             "~/*": ["src/*"]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","*.d.ts","masterGo/**/*.ts"],
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","*.d.ts","masterGo/**/*.ts","common/**/*.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

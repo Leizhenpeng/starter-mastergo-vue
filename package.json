@@ -33,7 +33,8 @@
         "@vueuse/core": "^9.2.0",
         "figx": "^0.1.0",
         "naive-ui": "^2.33.3",
-        "vue": "^3.2.39"
+        "vue": "^3.2.39",
+        "eventemitter3": "^4.0.7"
     },
     "devDependencies": {
         "@antfu/eslint-config": "^0.25.2",

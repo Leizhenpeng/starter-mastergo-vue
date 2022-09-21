@@ -83,6 +83,7 @@ export default defineConfig({
       ...currentConfig,
       emptyOutDir: false,
     },
+    minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
