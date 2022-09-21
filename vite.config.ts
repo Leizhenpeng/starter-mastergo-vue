@@ -7,40 +7,25 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { ArcoResolver } from 'unplugin-vue-components/resolvers'
+import { obfuscator } from 'rollup-obfuscator'
 import { viteSingleFile } from './utils/vite_build_single_file'
-import { obfuscator } from 'rollup-obfuscator';
 const config = {
   ui: {
     input: {
       main: path.resolve(__dirname, 'index.html'),
-<<<<<<< HEAD
     },
     output: {
       entryFileNames: 'assets/[name].js',
     },
-=======
-    },
-    output: {
-      entryFileNames: 'assets/[name].js',
-    },
->>>>>>> master
   },
   hook: {
     input: {
       masterGo: path.resolve(__dirname, './masterGo/code.ts'),
-<<<<<<< HEAD
     },
     output: {
       dir: path.resolve(__dirname, './.appscript'),
       entryFileNames: 'code.js',
     },
-=======
-    },
-    output: {
-      dir: path.resolve(__dirname, './.appscript'),
-      entryFileNames: 'code.js',
-    },
->>>>>>> master
   },
 }
 
@@ -56,10 +41,6 @@ export default defineConfig({
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
-<<<<<<< HEAD
-
-=======
->>>>>>> master
   define: {
     'import.meta.vitest': 'false',
   },
@@ -80,11 +61,11 @@ export default defineConfig({
           dts: true,
         }),
         Components({
-<<<<<<< HEAD
           resolvers: [ArcoResolver()],
           dts: true,
         }),
         viteSingleFile(),
+        obfuscator(),
       ],
   css: {
     preprocessorOptions: {
@@ -101,25 +82,11 @@ export default defineConfig({
     rollupOptions: {
       ...currentConfig,
       emptyOutDir: false,
-=======
-          resolvers: [NaiveUiResolver()],
-          dts: true,
-        }),
-        viteSingleFile(),
-        obfuscator(),
-      ],
-  build: {
-    assetsInlineLimit: 1000000000000000,
-    rollupOptions: {
-      ...currentConfig,
-      emptyOutDir: false,
     },
-    minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
       },
->>>>>>> master
     },
   },
   server: {
