@@ -3,15 +3,16 @@
 A starter template using vue3 and vite for developing masterGo plugins
 
 
-![ScreenShoot-dark](./docs/shotScreen-acro.png)
+![ScreenShoot-dark](./docs/shotScreen_tweakpane.png)
 
 
-![ScreenShoot-light](./docs/shotScreen_acro_light.png)
+![ScreenShoot-light](./docs/shotScreen_tweakpane_light.png)
 
 ## Choose Love UI Librairy By Branch
 
 - [Naive Ui](https://github.com/Leizhenpeng/starter-mastergo-vue/tree/naive-ui)
 - [Acro Design](https://github.com/Leizhenpeng/starter-mastergo-vue/tree/arcro-ui)
+- [Tewak Pane](https://github.com/Leizhenpeng/starter-mastergo-vue/tree/tweakpane)
 
 
 ## Get started 
@@ -49,6 +50,6 @@ pnpm run build
 More about masterGo plugins: [here](https://developers.mastergo.com/guide/setup.html)
 ## Librairy
 
-- [Naive UI](https://www.naiveui.com)
+- [Tweakpane](https://cocopon.github.io/tweakpane/)
 - [VueUse](https://vueuse.org/)
 
