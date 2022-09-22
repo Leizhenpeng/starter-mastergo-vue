@@ -1,11 +1,18 @@
 /// <reference types="@mastergo/plugin-utils" />
 import { hook as io } from '../common/event'
-import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION } from '../common/eventName'
+import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, RESIZE, SET_THEME, TEST_ACTION } from '../common/eventName'
 mg.showUI(__html__, {
-  width: 450,
-  height: 600,
+  width: 300,
+  height: 400,
 })
 
+io?.on(RESIZE, ({ width, height }) => {
+  console.log(width, height)
+  mg.ui.resize(
+    width + 12,
+    height + 80,
+  )
+})
 io?.on(NOTIFY, (data) => {
   if (typeof data === 'string')
     mg.notify(data)

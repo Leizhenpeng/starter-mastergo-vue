@@ -65,7 +65,7 @@ export default defineConfig({
           dts: true,
         }),
         viteSingleFile(),
-        obfuscator(),
+        // obfuscator(),
       ],
   css: {
     preprocessorOptions: {
@@ -83,12 +83,12 @@ export default defineConfig({
       ...currentConfig,
       emptyOutDir: false,
     },
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-      },
-    },
+    // minify: 'terser',
+    // terserOptions: {
+    //   compress: {
+    //     drop_console: true,
+    //   },
+    // },
   },
   server: {
     host: '0.0.0.0',
