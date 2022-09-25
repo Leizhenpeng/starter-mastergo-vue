@@ -7,7 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AButton: typeof import('@arco-design/web-vue')['Button']
-    ATypographyText: typeof import('@arco-design/web-vue')['TypographyText']
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NGradientText: typeof import('naive-ui')['NGradientText']
+    NRate: typeof import('naive-ui')['NRate']
   }
 }

@@ -49,28 +49,48 @@ onKeyStroke('Escape', (e) => {
   e.preventDefault()
   cancel()
 })
+const themeOverrides = computed(() => {
+  /**
+ * js 文件下使用这个做类型提示
+ * @type import('naive-ui').GlobalThemeOverrides
+ */
+  const custom: GlobalThemeOverrides = {
+    common: {
+      primaryColor: mainColor.value,
+      primaryColorHover: mainColor.value,
+      successColor: mainColor.value,
+    },
+    Button: {
+      textColor: mainColor.value,
+      textColorFocus: mainColor.value,
+      color: mainColor.value,
+      borderHover: mainColor.value,
+      borderPressed: mainColor.value,
+    },
+  }
+  return custom
+})
 </script>
 
 <template>
-  <div>
+  <n-config-provider :theme-overrides="themeOverrides" :theme="ifUseDarkTheme">
     <div flex="~ center col">
-      <img :src="logo" mt-12 w-120px h-120px>
+      <img :src="logo" mt-12 w-140px h-140px>
+
       <div flex="~ row gap-4" mt-12>
-        <a-button btn type="primary" @click="consoleTry">
+        <button btn @click="consoleTry">
           Show Console
-        </a-button>
-        <a-button type="secondary" btn @click="create">
+        </button>
+        <button btn @click="create">
           Manipulate UI
-        </a-button>
-        <a-button btn type="secondary" @click="Test">
-          Test Btn
-        </a-button>
+        </button>
       </div>
 
       <div mxa mt-10 flex="col ~ gap-4 center">
-        <a-typography-text type="primary" bold text-xl>
-          Vue 3 + Vite + Acro Design + Uno + VueUse
-        </a-typography-text>
+        <n-gradient-text type="success" :size="24">
+          Vue 3 + Vite + Naive UI + Uno + VueUse
+        </n-gradient-text>
+        <n-rate />
       </div>
       <button flex="~ center gap-2" mt-12 @click="cancel">
         <div i-ph-hands-clapping icon-btn />
@@ -79,7 +99,7 @@ onKeyStroke('Escape', (e) => {
         </div>
       </button>
     </div>
-  </div>
+  </n-config-provider>
 </template>
 
 <style>
