@@ -11,7 +11,7 @@ const consoleTry = () => {
     NOTIFY, 'This is a notification from the main process',
   )
 }
-const Test = () => {
+const test = () => {
   io?.send(TEST_ACTION, 'test')
 }
 const cancel = () => {
@@ -83,6 +83,9 @@ const themeOverrides = computed(() => {
         </button>
         <button btn @click="create">
           Manipulate UI
+        </button>
+        <button btn @click="test">
+          Test One
         </button>
       </div>
 
