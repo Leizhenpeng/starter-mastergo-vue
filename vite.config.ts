@@ -7,8 +7,8 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import { obfuscator } from 'rollup-obfuscator'
 import { viteSingleFile } from './utils/vite_build_single_file'
-import { obfuscator } from 'rollup-obfuscator';
 const config = {
   ui: {
     input: {
