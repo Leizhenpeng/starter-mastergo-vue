@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import type { GlobalThemeOverrides } from 'naive-ui'
 import { darkTheme } from 'naive-ui'
-import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION } from '../common/eventName'
 import { ui as io } from '../common/event'
-import logo from './assets/logo-acro.png'
+import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION } from '../common/eventName'
+import logo from './assets/logo.png'
+
+const triggerOne = ref('This works!')
 const consoleTry = () => {
   io?.send(
     NOTIFY, 'This is a notification from the main process',
   )
 }
-
 const Test = () => {
   io?.send(TEST_ACTION, 'test')
 }
-
 const cancel = () => {
   io?.send(EXIST, '')
 }

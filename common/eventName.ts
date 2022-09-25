@@ -6,4 +6,3 @@ export const SET_THEME = 'setTheme'
 
 export const TEST_ACTION = 'test-action'
 export const CREATE_RECTANGLES = 'create-rectangles'
-
