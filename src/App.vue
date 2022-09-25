@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import type { GlobalThemeOverrides } from 'naive-ui'
 import { darkTheme } from 'naive-ui'
+import { ui as io } from '../common/event'
+import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION } from '../common/eventName'
 import logo from './assets/logo.png'
 
 const triggerOne = ref('This works!')
 const consoleTry = () => {
-  parent.postMessage({ type: 'apply-code', triggerOne: triggerOne.value }
-    , '*')
+  io?.send(
+    NOTIFY, 'This is a notification from the main process',
+  )
 }
-
 const Test = () => {
-  parent.postMessage({ type: 'test' }
-    , '*')
+  io?.send(TEST_ACTION, 'test')
 }
-
 const cancel = () => {
-  parent.postMessage({ type: 'cancel' }, '*')
+  io?.send(EXIST, '')
 }
 const create = () => {
-  parent.postMessage({ type: 'create-rectangles', count: 5 }, '*')
+  io?.send(CREATE_RECTANGLES, { type: 'create-rectangles', count: 5 })
 }
 const isDark = ref(true)
 const ifUseDarkTheme = computed(() => {
