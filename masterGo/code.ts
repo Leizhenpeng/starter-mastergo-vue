@@ -7,8 +7,11 @@ mg.showUI(__html__, {
 })
 
 io?.on(NOTIFY, (data) => {
-  if (typeof data === 'string')
-    mg.notify(data)
+  if (typeof data === 'string') {
+    mg.notify(data, {
+      position: 'bottom',
+    })
+  }
 })
 
 io?.on(GET_TEHME, () => {
