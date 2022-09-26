@@ -73,36 +73,38 @@ const themeOverrides = computed(() => {
 </script>
 
 <template>
-  <n-config-provider :theme-overrides="themeOverrides" :theme="ifUseDarkTheme">
-    <div flex="~ center col">
-      <img :src="logo" mt-12 w-140px h-140px>
+  <div :class="[isDark ? 'dark' : '']">
+    <n-config-provider :theme-overrides="themeOverrides" :theme="ifUseDarkTheme">
+      <div flex="~ center col">
+        <img :src="logo" mt-12 w-140px h-140px>
 
-      <div flex="~ row gap-4" mt-12>
-        <button btn @click="consoleTry">
-          Show Console
-        </button>
-        <button btn @click="create">
-          Manipulate UI
-        </button>
-        <button btn @click="test">
-          Test One
-        </button>
-      </div>
-
-      <div mxa mt-10 flex="col ~ gap-4 center">
-        <n-gradient-text type="success" :size="24">
-          Vue 3 + Vite + Naive UI + Uno + VueUse
-        </n-gradient-text>
-        <n-rate />
-      </div>
-      <button flex="~ center gap-2" mt-12 @click="cancel">
-        <div i-ph-hands-clapping icon-btn />
-        <div icon-btn>
-          See U Again
+        <div flex="~ row gap-4" mt-12>
+          <button btn @click="consoleTry">
+            Show Console
+          </button>
+          <button btn @click="create">
+            Manipulate UI
+          </button>
+          <button btn @click="test">
+            Test One
+          </button>
         </div>
-      </button>
-    </div>
-  </n-config-provider>
+
+        <div mxa mt-10 flex="col ~ gap-4 center">
+          <n-gradient-text type="success" :size="24">
+            Vue 3 + Vite + Naive UI + Uno + VueUse
+          </n-gradient-text>
+          <n-rate />
+        </div>
+        <button flex="~ center gap-2" mt-12 @click="cancel">
+          <div i-ph-hands-clapping icon-btn />
+          <div icon-btn>
+            See U Again
+          </div>
+        </button>
+      </div>
+    </n-config-provider>
+  </div>
 </template>
 
 <style>

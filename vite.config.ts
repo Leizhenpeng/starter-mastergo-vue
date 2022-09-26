@@ -76,6 +76,7 @@ export default defineConfig({
         javascriptEnabled: true,
       },
     },
+    
   },
   build: {
     assetsInlineLimit: 1000000000000000,
