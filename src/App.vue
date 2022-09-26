@@ -52,7 +52,7 @@ onKeyStroke('Escape', (e) => {
 </script>
 
 <template>
-  <div>
+  <div :class="[isDark ? 'dark' : '']">
     <div flex="~ center col">
       <img :src="logo" mt-12 w-120px h-120px>
       <div flex="~ row gap-4" mt-12>
