@@ -13,7 +13,13 @@ io?.on(NOTIFY, (data) => {
     })
   }
 })
-
+mg.on(
+  'themechange',
+  (theme: any) => {
+    const ifDark = theme === 'dark' ? 1 : 0
+    io?.send(SET_THEME, { ifDark })
+  },
+)
 io?.on(GET_TEHME, () => {
   const mg_ = mg as any
   const ifDark = mg_.themeColor === 'dark' ? 1 : 0
