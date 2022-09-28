@@ -17,6 +17,14 @@ io?.on(GET_TEHME, () => {
   io?.send(SET_THEME, { ifDark })
 })
 
+mg.on(
+  'themechange',
+  (theme: any) => {
+    const ifDark = theme === 'dark' ? 1 : 0
+    io?.send(SET_THEME, { ifDark })
+  },
+)
+
 io?.on(TEST_ACTION, () => {
   mg.notify('test code execute successful!')
 })
