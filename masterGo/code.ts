@@ -1,6 +1,6 @@
 /// <reference types="@mastergo/plugin-utils" />
 import { hook as io } from '../common/event'
-import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION } from '../common/eventName'
+import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION, UI_READY } from '../common/eventName'
 mg.showUI(__html__, {
   width: 450,
   height: 600,
@@ -47,4 +47,7 @@ io?.on(CREATE_RECTANGLES, ({ count }) => {
   mg.viewport.scrollAndZoomIntoView(nodes)
 })
 
+io?.on(UI_READY, async () => {
+  // ..
+})
 export { }

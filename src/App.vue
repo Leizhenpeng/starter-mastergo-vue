@@ -2,7 +2,7 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
 import { darkTheme } from 'naive-ui'
 import { ui as io } from '../common/event'
-import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION } from '../common/eventName'
+import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION, UI_READY } from '../common/eventName'
 import logo from './assets/logo.png'
 
 const triggerOne = ref('This works!')
@@ -43,6 +43,7 @@ watch(isDark, () => {
 
 onMounted(() => {
   io?.send(GET_TEHME, '')
+  io?.send(UI_READY, '')
 })
 
 onKeyStroke('Escape', (e) => {
