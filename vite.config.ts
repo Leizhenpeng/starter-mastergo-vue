@@ -65,7 +65,9 @@ export default defineConfig({
           dts: true,
         }),
         viteSingleFile(),
-        obfuscator(),
+        obfuscator({
+          optionsPreset: 'medium-obfuscation',
+        }),
       ],
   css: {
     preprocessorOptions: {
