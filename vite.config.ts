@@ -66,7 +66,7 @@ export default defineConfig({
         }),
         viteSingleFile(),
         obfuscator({
-          optionsPreset: 'medium-obfuscation',
+          optionsPreset: 'low-obfuscation',
         }),
       ],
   css: {
