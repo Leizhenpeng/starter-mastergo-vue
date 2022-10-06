@@ -39,6 +39,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+      '@/': `${path.resolve(__dirname, 'masterGo')}/`,
+      '#/': `${path.resolve(__dirname, 'common')}/`,
     },
   },
   define: {
