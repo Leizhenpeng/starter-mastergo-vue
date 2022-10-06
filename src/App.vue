@@ -1,26 +1,14 @@
 <script setup lang="ts">
 import type { GlobalThemeOverrides } from 'naive-ui'
 import { darkTheme } from 'naive-ui'
-import { ui as io } from '../common/event'
-import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION, UI_READY } from '../common/eventName'
-import logo from './assets/logo.png'
+import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION, UI_READY } from '#/eventName'
+import { ui as io } from '#/event'
+import logo from '~/assets/logo.png'
+import { isDark } from '~/state'
 
+import { cancel, consoleTry, create, test } from '~/send.emit'
 const triggerOne = ref('This works!')
-const consoleTry = () => {
-  io?.send(
-    NOTIFY, 'This is a notification from the main process',
-  )
-}
-const test = () => {
-  io?.send(TEST_ACTION, 'test')
-}
-const cancel = () => {
-  io?.send(EXIST, '')
-}
-const create = () => {
-  io?.send(CREATE_RECTANGLES, { type: 'create-rectangles', count: 5 })
-}
-const isDark = ref(false)
+
 const ifUseDarkTheme = computed(() => {
   if (isDark.value)
     return darkTheme
@@ -29,10 +17,6 @@ const ifUseDarkTheme = computed(() => {
 const el = ref(null)
 const mainColor = useCssVar('--c-primary', el)
 useTitle('masterGo Plugin UI')
-
-io?.on(SET_THEME, ({ ifDark }) => {
-  isDark.value = ifDark
-})
 
 watch(isDark, () => {
   if (isDark.value)

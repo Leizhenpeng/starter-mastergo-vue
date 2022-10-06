@@ -65,6 +65,7 @@ export default defineConfig({
         Components({
           resolvers: [NaiveUiResolver()],
           dts: true,
+          dirs: ['src/components', 'src/pages'],
         }),
         viteSingleFile(),
         obfuscator({
