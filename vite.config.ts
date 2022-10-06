@@ -68,9 +68,9 @@ export default defineConfig({
           dirs: ['src/components', 'src/pages'],
         }),
         viteSingleFile(),
-        obfuscator({
-          optionsPreset: 'low-obfuscation',
-        }),
+        // obfuscator({
+        //   optionsPreset: 'low-obfuscation',
+        // }),
       ],
   css: {
     preprocessorOptions: {
@@ -89,12 +89,12 @@ export default defineConfig({
       ...currentConfig,
       emptyOutDir: false,
     },
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-      },
-    },
+    // minify: 'terser',
+    // terserOptions: {
+    //   compress: {
+    //     drop_console: true,
+    //   },
+    // },
   },
   server: {
     host: '0.0.0.0',
