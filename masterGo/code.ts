@@ -1,6 +1,8 @@
 /// <reference types="@mastergo/plugin-utils" />
-import { hook as io } from '../common/event'
-import { CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION, UI_READY } from '../common/eventName'
+import { selectImagePoolNum, testConfig, updateSelection } from '@/state'
+import { hook as io } from '#/event'
+import { CHANGE_SELECT_IMG_NUM, CONFIG_CHANGE, CONFIG_REFRESH, CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION, UI_READY, WARN } from '#/eventName'
+import { getConfig, updateConfig } from '@/utils'
 mg.showUI(__html__, {
   width: 450,
   height: 600,
@@ -10,6 +12,15 @@ io?.on(NOTIFY, (data) => {
   if (typeof data === 'string') {
     mg.notify(data, {
       position: 'bottom',
+    })
+  }
+})
+
+io?.on(WARN, (data) => {
+  if (typeof data === 'string') {
+    mg.notify(data, {
+      position: 'bottom',
+      type: 'warning',
     })
   }
 })
@@ -47,7 +58,25 @@ io?.on(CREATE_RECTANGLES, ({ count }) => {
   mg.viewport.scrollAndZoomIntoView(nodes)
 })
 
+// ui 加载完成
 io?.on(UI_READY, async () => {
-  // ..
+  testConfig.value = await getConfig()
+  io?.send(CONFIG_REFRESH, testConfig.value)
+  updateSelection()
 })
+
+// 配置改变
+io?.on(CONFIG_CHANGE, (testConfigNew) => {
+  testConfig.value = testConfigNew
+  updateConfig(testConfigNew)
+})
+
+watchDebounced(selectImagePoolNum, () => {
+  io?.send(CHANGE_SELECT_IMG_NUM, {
+    num: selectImagePoolNum.value,
+  })
+}, {
+  debounce: 100,
+})
+
 export { }
