@@ -29,10 +29,11 @@
     "dependencies": {
         "@mastergo/plugin-utils": "^0.1.0",
         "@vueuse/core": "^9.2.0",
+        "eventemitter3": "^4.0.7",
         "figx": "^0.1.0",
+        "lodash": "^4.17.21",
         "naive-ui": "^2.33.3",
-        "vue": "^3.2.39",
-        "eventemitter3": "^4.0.7"
+        "vue": "^3.2.39"
     },
     "devDependencies": {
         "@antfu/eslint-config": "^0.25.2",
@@ -43,6 +44,8 @@
         "@vitejs/plugin-vue": "^2.3.4",
         "eslint": "^8.19.0",
         "less": "^4.1.2",
+        "rollup-obfuscator": "^3.0.1",
+        "terser": "^5.15.0",
         "typescript": "^4.8.3",
         "unocss": "^0.45.21",
         "unplugin-auto-import": "^0.9.2",
@@ -50,8 +53,6 @@
         "vite": "^2.9.15",
         "vite-node": "^0.17.1",
         "vitest": "^0.18.1",
-        "vue-tsc": "^1.0.1",
-        "terser": "^5.15.0",
-        "rollup-obfuscator": "^3.0.1"
+        "vue-tsc": "^1.0.1"
     }
 }
