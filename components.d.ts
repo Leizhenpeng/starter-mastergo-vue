@@ -7,8 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    HasSelection: typeof import('./src/components/select/HasSelection.vue')['default']
+    MainShow: typeof import('./src/components/logo/MainShow.vue')['default']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
-    NGradientText: typeof import('naive-ui')['NGradientText']
-    NRate: typeof import('naive-ui')['NRate']
+    NotSelection: typeof import('./src/components/select/NotSelection.vue')['default']
+    NResult: typeof import('naive-ui')['NResult']
+    NSpin: typeof import('naive-ui')['NSpin']
+    Process: typeof import('./src/pages/process.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }

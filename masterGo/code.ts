@@ -4,8 +4,8 @@ import { hook as io } from '#/event'
 import { CHANGE_SELECT_IMG_NUM, CONFIG_CHANGE, CONFIG_REFRESH, CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION, UI_READY, WARN } from '#/eventName'
 import { getConfig, updateConfig } from '@/utils'
 mg.showUI(__html__, {
-  width: 450,
-  height: 600,
+  width: 300,
+  height: 370,
 })
 
 io?.on(NOTIFY, (data) => {
@@ -31,6 +31,11 @@ mg.on(
     io?.send(SET_THEME, { ifDark })
   },
 )
+
+mg.on('selectionchange',
+  () => {
+    updateSelection()
+  })
 io?.on(GET_TEHME, () => {
   const mg_ = mg as any
   const ifDark = mg_.themeColor === 'dark' ? 1 : 0
