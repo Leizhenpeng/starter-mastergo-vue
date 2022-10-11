@@ -52,5 +52,5 @@ export async function updateConfig(testnum: ETestNum) {
 }
 
 export async function getConfig() {
-  return mg.clientStorage.getAsync(CS_TEST_CONFIG) ?? ETestNum.one
+  return await mg.clientStorage.getAsync(CS_TEST_CONFIG) ?? ETestNum.one
 }
