@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import MainShow from '../logo/MainShow.vue'
 import { ui as io } from '#/event'
-import { EXIST, TRY_RESET_SIZE } from '#/eventName'
+import { EXIST, TRY_PROCESS } from '#/eventName'
 import { loadingProcess, selectImageNum, testConfig } from '~/state'
 const showTitle = computed(() => {
   return `已选中${selectImageNum.value}张图片`
 })
 const coreProcess = () => {
   loadingProcess.value = true
-  io?.send(TRY_RESET_SIZE, '')
+  io?.send(TRY_PROCESS, '')
 }
 </script>
 
