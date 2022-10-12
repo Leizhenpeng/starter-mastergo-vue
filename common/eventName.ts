@@ -20,6 +20,6 @@ export const CHANGE_SELECT_IMG_NUM = 'change-select-img-num' // 选择图片数�
 export const SEND_RAW_IMAGE = 'send-raw-image'
 // { href: string, width: number, height: number,id:string , filesize:number, success:boolean}
 export const BACK_IAMGE_INFO = 'back-image-info'
-export const TRY_RESET_SIZE = 'try-reset-size'
+export const TRY_PROCESS = 'try-process'
 export const REFRESH_REPLACE_PRECENT = 'refresh-replace-precent' // 刷新替换百分比
 
