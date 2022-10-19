@@ -25,14 +25,14 @@ a {
   --c-primary: #7ec242;
   --c-primary-deep: #6da13f;
   --c-ok: #6da13f;
-  --c-mis: ##dab40b;
+  --c-mis: #dab40b;
   --c-warn: #C23A3A;
 }
 .dark {
    --c-primary: #7ec242;
   --c-primary-deep: #6da13f;
   --c-ok: #6da13f;
-  --c-mis: ##dab40b;
+  --c-mis: #dab40b;
   --c-warn: #C23A3A;
 }
 
