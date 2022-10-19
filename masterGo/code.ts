@@ -1,7 +1,7 @@
 /// <reference types="@mastergo/plugin-utils" />
 import { selectImagePoolNum, testConfig, updateSelection } from '@/state'
 import { hook as io } from '#/event'
-import { CHANGE_SELECT_IMG_NUM, CONFIG_CHANGE, CONFIG_REFRESH, CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, SET_THEME, TEST_ACTION, TRY_PROCESS, UI_READY, WARN } from '#/eventName'
+import { CHANGE_SELECT_IMG_NUM, CONFIG_CHANGE, CONFIG_REFRESH, CREATE_RECTANGLES, EXIST, GET_TEHME, NOTIFY, REFRESH_REPLACE_PRECENT, SET_THEME, TEST_ACTION, TRY_PROCESS, UI_READY, WARN } from '#/eventName'
 import { getConfig, updateConfig } from '@/utils'
 mg.showUI(__html__, {
   width: 300,
@@ -45,6 +45,7 @@ io?.on(GET_TEHME, () => {
 io?.on(TRY_PROCESS, () => {
   mg.notify('test code execute successful!')
   // exec code
+  io?.send(REFRESH_REPLACE_PRECENT, { test: 'test' })
   mg.notify('test code execute end!')
 })
 
