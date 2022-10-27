@@ -85,9 +85,9 @@ export default defineConfig({
   },
   build: {
     assetsInlineLimit: 1000000000000000,
+    emptyOutDir: false,
     rollupOptions: {
       ...currentConfig,
-      emptyOutDir: false,
     },
     // minify: 'terser',
     // terserOptions: {
