@@ -21,8 +21,8 @@
         "dev:ui": "LIB_NAME=ui vite",
         "dev:hook": "vue-tsc --noEmit && LIB_NAME=hook vite build --mode production --watch",
         "build:hook": "vue-tsc --noEmit && LIB_NAME=hook vite build --mode production",
-        "build:ui": "vue-tsc --noEmit && LIB_NAME=ui vite build --mode production",
-        "build": "npm run build:hook && npm run build:ui && node utils/postProcessHtml.js",
+        "build:ui": "vue-tsc --noEmit && LIB_NAME=ui vite build --mode production && node utils/postProcessHtml.js",
+        "build": "npm run build:hook && npm run build:ui",
         "preview": "vite preview",
         "test": "vitest"
     },
