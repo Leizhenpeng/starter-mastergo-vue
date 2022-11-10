@@ -6,3 +6,6 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+// import SvgB from '~/assets/bbburst.svg?component'
+// https://www.npmjs.com/package/vite-svg-loader
+declare module '*.svg?component' 
