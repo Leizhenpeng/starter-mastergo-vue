@@ -7,7 +7,6 @@ import { setupRouter } from './router'
 // import '@arco-themes/vue-taolu-publishing-platform/index.less'
 import '~/listen.emit'
 import '~/send.emit'
-
 const app = createApp(App)
 setupRouter(app)
 app.mount('#app')
