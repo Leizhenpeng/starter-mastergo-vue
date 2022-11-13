@@ -18,15 +18,18 @@
         "vite"
     ],
     "watch": {
-        "process": "dist/*/*.js"
+        "dev-deep-ui": {
+            "patterns": "src/**/*",
+            "extensions": "js,vue,ts",
+            "delay": 1000
+        }
     },
     "scripts": {
         "dev:ui": "LIB_NAME=ui vite",
         "dev:hook": "vue-tsc --noEmit && LIB_NAME=hook vite build --mode production --watch",
-        "dev:deep:ui": "vue-tsc --noEmit && LIB_NAME=ui vite build --mode production --watch",
-        "process": "node utils/postProcessHtml.js",
-        "watch:process": "npm-watch process",
-        "start:dev": "npm-run-all --parallel dev:** watch:process --continue-on-error",
+        "dev-deep-ui": "vue-tsc --noEmit && LIB_NAME=ui vite build --mode production && node utils/postProcessHtml.js",
+        "watch:dev:ui": "npm-watch dev-deep-ui",
+        "start:dev": "npm-run-all --parallel dev:ui dev:hook  watch:dev:ui  --continue-on-error",
         "build:hook": "vue-tsc --noEmit && LIB_NAME=hook vite build --mode production",
         "build:ui": "vue-tsc --noEmit && LIB_NAME=ui vite build --mode production&& node utils/postProcessHtml.js ",
         "build": "npm run build:hook && npm run build:ui",
