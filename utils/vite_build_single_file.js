@@ -3,6 +3,45 @@ const defaultConfig = {
   useRecommendedBuildConfig: true,
   removeViteModuleLoader: false,
 }
+// Optionally remove the Vite module loader since it's no longer needed because this plugin has inlined all code.
+const _removeViteModuleLoader = (html) => {
+  const match = html.match(
+    /(<script type="module">[\s\S]*)(const (\S)=function\(\)\{[\s\S]*\};\3\(\);)/,
+  )
+  // Graceful fallback if Vite updates the format of their module loader in the future.
+  if (!match || match.length < 3)
+    return html
+  return html
+    .replace(match[1], '  <script type="module">')
+    .replace(match[2], '')
+}
+// Modifies the Vite build config to make this plugin work well.
+const _useRecommendedBuildConfig = (config) => {
+  if (!config.build)
+    config.build = {}
+  // Ensures that even very large assets are inlined in your JavaScript.
+  config.build.assetsInlineLimit = 10000000000000
+  // Avoid warnings about large chunks.
+  config.build.chunkSizeWarningLimit = 100000000
+  // Emit all CSS as a single file, which `vite-plugin-singlefile` can then inline.
+  config.build.cssCodeSplit = false
+  // Avoids the extra step of testing Brotli compression, which isn't really pertinent to a file served locally.
+  config.build.reportCompressedSize = false
+  if (!config.build.rollupOptions)
+    config.build.rollupOptions = {}
+  if (!config.build.rollupOptions.output)
+    config.build.rollupOptions.output = {}
+  const updateOutputOptions = (out) => {
+    // Ensure that as many resources as possible are inlined.
+    out.inlineDynamicImports = false
+  }
+  if (!Array.isArray(config.build.rollupOptions.output))
+    updateOutputOptions(config.build.rollupOptions.output)
+
+  else
+    config.build.rollupOptions.output.forEach(updateOutputOptions)
+}
+
 export function viteSingleFile({
   useRecommendedBuildConfig = true,
   removeViteModuleLoader = false,
@@ -45,42 +84,4 @@ export function viteSingleFile({
       },
     },
   }
-}
-// Optionally remove the Vite module loader since it's no longer needed because this plugin has inlined all code.
-const _removeViteModuleLoader = (html) => {
-  const match = html.match(
-    /(<script type="module">[\s\S]*)(const (\S)=function\(\)\{[\s\S]*\};\3\(\);)/,
-  )
-  // Graceful fallback if Vite updates the format of their module loader in the future.
-  if (!match || match.length < 3)
-    return html
-  return html
-    .replace(match[1], '  <script type="module">')
-    .replace(match[2], '')
-}
-// Modifies the Vite build config to make this plugin work well.
-const _useRecommendedBuildConfig = (config) => {
-  if (!config.build)
-    config.build = {}
-  // Ensures that even very large assets are inlined in your JavaScript.
-  config.build.assetsInlineLimit = 10000000000000
-  // Avoid warnings about large chunks.
-  config.build.chunkSizeWarningLimit = 100000000
-  // Emit all CSS as a single file, which `vite-plugin-singlefile` can then inline.
-  config.build.cssCodeSplit = false
-  // Avoids the extra step of testing Brotli compression, which isn't really pertinent to a file served locally.
-  config.build.reportCompressedSize = false
-  if (!config.build.rollupOptions)
-    config.build.rollupOptions = {}
-  if (!config.build.rollupOptions.output)
-    config.build.rollupOptions.output = {}
-  const updateOutputOptions = (out) => {
-    // Ensure that as many resources as possible are inlined.
-    out.inlineDynamicImports = false
-  }
-  if (!Array.isArray(config.build.rollupOptions.output))
-    updateOutputOptions(config.build.rollupOptions.output)
-
-  else
-    config.build.rollupOptions.output.forEach(updateOutputOptions)
 }
