@@ -87,7 +87,7 @@ export default defineConfig({
   },
   build: {
     assetsInlineLimit: 1000000000000000,
-    emptyOutDir: true,
+    emptyOutDir: false,
     rollupOptions: {
       ...currentConfig,
     },
